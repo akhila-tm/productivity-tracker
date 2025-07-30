@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./components/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [newTask, setNewTask] = useState("");
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
   /*Function to add tasks */
   const addTask = (e) => {
     e.preventDefault();
@@ -17,6 +19,10 @@ function App() {
     let updatedTasks = taskList.filter((_, index) => i !== index);
     setTaskList(updatedTasks);
   };
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(taskList));
+  }, [taskList]);
   return (
     <Home
       newTask={newTask}
