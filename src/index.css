@@ -1,0 +1,40 @@
+/* Apply full height and flex centering */
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  font-family: sans-serif;
+}
+
+/* Container for your app */
+.app {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Center title/text */
+.homePage h1 {
+  text-align: center;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.inputField {
+  margin-right: 10px;
+}
+
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
